@@ -58,7 +58,7 @@ def move_file(source, destination):
         return str(e)
 
 def on_ui_tabs():
-    with gr.Blocks(analytics_enabled=False) as filemanager:
+    with gr.Blocks(analytics_enabled=False) as downloader:
         create_parent_dirs = gr.Checkbox(True, label="Create parent model directories if they do not exist (this may result in unintended consequences if you mistype something!)", interactive=True)
             with gr.Tab("File Manager"):
         with gr.Column():
@@ -100,7 +100,7 @@ def on_ui_tabs():
                 file_details_button.click(lambda path: "\n".join([f"{k}: {v}" for k, v in get_file_details(path).items()]), inputs=[file_path_input], outputs=[file_details_output])
 
 
-    return (filemanager, "File Manager", "downloader"),
+    return (downloader, "Downloader", "downloader"),
 
 
 script_callbacks.on_ui_tabs(on_ui_tabs)

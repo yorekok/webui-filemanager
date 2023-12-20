@@ -99,7 +99,7 @@ def on_ui_tabs():
 			file_details_button.click(lambda path: "\n".join([f"{k}: {v}" for k, v in get_file_details(path).items()]), inputs=[file_path_input], outputs=[file_details_output])
 	
 	
-    return (downloader, "Filemanager", "downloader"),
+    return (downloader, "Downloader", "downloader"),
 
 
 script_callbacks.on_ui_tabs(on_ui_tabs)
